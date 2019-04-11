@@ -1,0 +1,1 @@
+export type thingy = 'foo' | 'bar' | 'baz';
