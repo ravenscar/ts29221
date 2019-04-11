@@ -1,0 +1,11 @@
+{
+  "name": "ts29221-a",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "BSD",
+  "dependencies": {
+  }
+}
