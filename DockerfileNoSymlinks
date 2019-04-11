@@ -1,0 +1,12 @@
+FROM node:10-alpine
+RUN apk add --no-cache git
+RUN mkdir /ts29221 && chown -R node:node /ts29221
+RUN git clone https://github.com/ravenscar/ts29221.git /ts29221-symlinks && chown -R node:node /ts29221-symlinks
+WORKDIR /ts29221-symlinks
+USER node
+RUN npm install
+RUN node_modules/.bin/lerna bootstrap
+RUN cp -r * /ts29221
+WORKDIR /ts29221
+RUN cd packages/c && npx typescript -b
+CMD ["node", "packages/c/dist"]
